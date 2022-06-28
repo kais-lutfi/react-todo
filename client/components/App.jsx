@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { Header } from './Header'
+import { Button } from './Button'
+import { Tasks } from './Tasks'
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const name = 'Kais'
+  const onClick = (e) => {
+    console.log(name)
+  }
 
   return (
-    <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Click me!</button>
-      <Routes>
-        <Route path='/test' element={<h1>TEST ROUTE</h1>} />
-      </Routes>
+    <div className='container'>
+      <Header   />
+      <Tasks />
+      <Button color='black' text='Add' onClick={onClick} />
+
     </div>
+    // 
   )
 }
 
