@@ -10,6 +10,6 @@ export const Header = ({title}) => {
 
 
 Header.defaultProps = {
-  title: 'Task Tracker'
+  title: 'Kais\'s Task App'
 }
 

@@ -38,7 +38,8 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.6",
