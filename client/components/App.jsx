@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Header } from './Header'
 import { Button } from './Button'
 import {Tasks} from './Tasks'
+import { Form } from './Form'
 
 const App = () => {
   const [tasks, setTasks] = useState([{
@@ -27,20 +28,25 @@ const App = () => {
     reminder: true
   }])
   const name = 'Kais'
-  const onClick = (e) => {
-    console.log(name)
+  const onClickAdd = (e) => {
+   console.log(name)
   }
   const deleteTask = (id) => {
     console.log('delete', id)
     setTasks(tasks.filter((task)=> task.id !==id))
   }
 
+  const toggleReminder = (id) => {
+  setTasks(
+    tasks.map((task)=>
+     task.id === id ? {...task, reminder: !task.reminder} : task))  }
+
   return (
     <div className='container'>
       <Header title='Task List'  />
       {tasks.length > 0 ? (
-      <Tasks tasks={tasks} onDelete={deleteTask}  /> ) : ('No more tasks :)')}
-      <Button color='black' text='Add' onClick={onClick} />
+      <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}  /> ) : ('No more tasks :)')}
+      <Button color='black' text='Add' onClick={onClickAdd}  />
 
     </div>
     // 
