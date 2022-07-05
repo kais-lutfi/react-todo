@@ -4,6 +4,10 @@ import { Header } from './Header'
 import { Button } from './Button'
 import {Tasks} from './Tasks'
 import { Form } from './Form'
+import { AddTask } from './AddTask'
+
+//Create dummy info//
+
 
 const App = () => {
   const [tasks, setTasks] = useState([{
@@ -27,10 +31,9 @@ const App = () => {
     day: 'Wednesday',
     reminder: true
   }])
-  const name = 'Kais'
-  const onClickAdd = (e) => {
-   console.log(name)
-  }
+ 
+
+  //create delete task function
   const deleteTask = (id) => {
     console.log('delete', id)
     setTasks(tasks.filter((task)=> task.id !==id))
@@ -44,9 +47,10 @@ const App = () => {
   return (
     <div className='container'>
       <Header title='Task List'  />
+      <AddTask />
       {tasks.length > 0 ? (
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}  /> ) : ('No more tasks :)')}
-      <Button color='black' text='Add' onClick={onClickAdd}  />
+      <Button color='black' text='Add'   />
 
     </div>
     // 

@@ -16,13 +16,15 @@ export const Form = () => {
 }  
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+  
+      <form className='add-form' onSubmit={handleSubmit}>
+        <div>
         <label>
           Task:
-          <input type="text" value={todo} onChange={handleChange} />
+          <input type="text" value={todo} onChange={handleChange} placeholder="Add Task" />
         </label>
+        </div>
       </form>
-    </div>
+    
   )
 }
